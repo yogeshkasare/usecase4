@@ -1,19 +1,29 @@
-{
-  "name": "sample-project",
-  "version": "1.0.0",
-  "description": "A sample Node.js project",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "mocha": "^9.1.3",
-    "chai": "^4.3.4",
-    "chai-http": "^4.3.0"
-  },
-  "author": "Your Name",
-  "license": "MIT"
-}
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
