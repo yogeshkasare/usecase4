@@ -4,8 +4,8 @@
   "description": "A sample Node.js project",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
-    "build": "echo \"No build step needed\""
+    "test": "mocha",
+    "build": "echo \"Running demo build step...\""
   },
   "dependencies": {
     "express": "^4.17.1"
