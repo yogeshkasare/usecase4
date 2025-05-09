@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha"
+    "build": "echo \"No build step needed\""
   },
   "dependencies": {
     "express": "^4.17.1"
